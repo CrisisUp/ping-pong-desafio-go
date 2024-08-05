@@ -5,15 +5,19 @@ import (
 	"time"
 )
 
+const reset = "\033[0m"
+const green = "\033[32m"
+const yellow = "\033[33m"
+
 func ping(c chan string) {
 	for i := 0; ; i++ {
-		c <- "ping"
+		c <- green + "ping" + reset
 	}
 }
 
 func pong(c chan string) {
 	for i := 0; ; i++ {
-		c <- "pong"
+		c <- yellow + "pong" + reset
 	}
 }
 
